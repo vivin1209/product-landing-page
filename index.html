@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>ps</title>
+	<link rel="stylesheet" type="text/css" href="style.css">
+	<link rel="stylesheet" href="css/font-awesome.css">
+</head>
+<body id="body">
+	<div class="container">
+		<div class="navbar">
+			<img src="img/logo.png" class="logo">
+			<button onclick="darkBg()" id="darkButton"><h4 id="content">dark</h4></button>
+			<nav>
+				<ul id="menulist">
+					<li><i class="fas fa-triangle" style="color:blue; font-size: 20px;"></i></li>
+					<li><a href="" id="m1">VR Access</a></li>
+					<li><a href="" id="m2">Controls</a></li>
+					<li><a href="" id="m3">Cart</a></li>
+				</ul>
+			</nav>
+			<img src="img/menu.png" class="menu-icon" onclick="vv()">
+		</div>
+		<div class="row">
+			<div class="col-1">
+				<h2 id="nn">PS4 V2<br>Dual shock 4</h2>
+				<h3 id="n1">Wireless Controller for Play Station</h3>
+				<p id="n2">(Compatible / Generic)</p>
+				<h4 id="n3">$32.50</h4>
+				<a href="index2.html"><button type="button">Buy Now<img src="img/arrow.png"></button></a>
+			</div>
+			<div class="col-2">
+				<img src="img/controller.png" alt="cont" class="controller">
+				<div class="color-box"></div>
+					<div class="add-btn">
+						<img src="img/add.png">
+						<p onclick="cart()"><small>Add to cart</small></p>
+					</div>
+			</div>
+		</div>
+		<div class="social">
+			<img src="img/fb.png">
+			<img src="img/tw.png">
+			<img src="img/ig.png">
+		</div>
+	</div>
+	<script>
+		var menulist = document.getElementById("menulist");
+		menulist.style.maxHeight = "0px";
+
+		function vv() {
+			if (menulist.style.maxHeight == "0px") {
+				menulist.style.maxHeight = "130px";
+			}
+			else{
+				menulist.style.maxHeight = "0px";
+			}
+		}
+		counter = 0;
+		function cart() {
+			counter++;
+			if (counter > 3) {
+				counter = 3;
+				alert("cant add more");
+			}
+			else{
+				document.getElementById("cart").innerHTML= counter;
+			}
+		}
+		function darkBg() {
+			if(document.getElementById("content").innerHTML == "dark"){
+				document.getElementById("body").style.backgroundColor="black";
+				document.getElementById("nn").style.color="white";
+				document.getElementById("n1").style.color="white";
+				document.getElementById("n2").style.color="white";
+				document.getElementById("n3").style.color="white";
+				document.getElementById("m1").style.color="white";
+				document.getElementById("m2").style.color="white";
+				document.getElementById("m3").style.color="white";
+				document.getElementById("content").innerHTML = "light";
+			}else{
+				document.getElementById("body").style.backgroundColor="white";
+				document.getElementById("nn").style.color="black";
+				document.getElementById("n1").style.color="black";
+				document.getElementById("n2").style.color="black";
+				document.getElementById("n3").style.color="black";
+				document.getElementById("m1").style.color="black";
+				document.getElementById("m2").style.color="black";
+				document.getElementById("m3").style.color="black";
+				document.getElementById("content").innerHTML = "dark";
+			}
+			
+		}
+	</script>
+</body>
+</html>
